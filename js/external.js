@@ -26,8 +26,8 @@ alert("You got paid son!" +totalpaid);*/
 
 
 
-/*let maxClass = Number(prompt("What is the maximum number of students in the class?"));
-console.log (maxClass);
+let maxClass = Number(prompt("What is the maximum number of students in the class?"));
+console.log(maxClass);
 let classSize = Number(prompt( "How many students are in the class currently?")) + 1;
 console.log(classSize);
 let doesItConflict = confirm( "Click Ok if this class does not conflict with any other classes.");
@@ -39,7 +39,7 @@ if (doesItConflict && (classSize <= maxClass)){
 } else {
     alert("We are so sorry, you didnt make the cut.");
     console.log("Whomp Whomp Whomp");
-}*/
+}
 
 
 
