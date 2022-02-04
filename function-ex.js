@@ -11,6 +11,7 @@
 * */
 
 
+/*
 function getName(){
     return (prompt("What is your name?"));
 }
@@ -20,4 +21,24 @@ function showName(username){
     alert(username);
 }
 
-showName(getName());
+showName(getName());*/
+
+function isLowerCase(){
+    return(prompt("What is your name?")
+}
+isLowerCase();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
