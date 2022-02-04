@@ -8,13 +8,13 @@
  * Example
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
+/*
 
-function sayHello(name){
-    return "Hello," ${name};
+function sayHello(name) {
+    return console.log ("Hello " + name);
 }
-console.log (sayHello("Becca"));
-
-
+sayHello('Becca');
+*/
 
 /**
  * TODO:
@@ -23,9 +23,14 @@ console.log (sayHello("Becca"));
  *
  * console.log 'helloMessage' to check your work
  */
-let myname = prompt("What is your name?")
-let helloMessage = sayHello(myname);
 
+/*let myname = prompt("What is your name?")
+let helloMessage = ("Hello ");
+
+function sayHello(){
+    console.log(helloMessage + myname);
+}
+sayHello(myname);*/
 
 /**
  * TODO:
@@ -36,7 +41,7 @@ let helloMessage = sayHello(myname);
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
-/*var random = Math.floor((Math.random() * 3) + 1);*/
+var random = Math.floor((Math.random() * 3) + 1);
 
 /**
  * TODO:
