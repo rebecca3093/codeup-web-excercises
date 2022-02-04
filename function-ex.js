@@ -23,21 +23,49 @@ function showName(username){
 
 showName(getName());*/
 
+
+
+/*
+
+//Lowercase Exercise
+//
+
+let lowerCase = (toLowerCase)
 function isLowerCase(){
-    return(prompt("What is your name?")
+    confirm (prompt("What is your name?"))
+    return (isLowerCase() = lowerCase())
 }
-isLowerCase();
+console.log(isLowerCase);
 
 
 
+*/
 
+/*
+// Double Exercise
 
+let numberDouble = Number(prompt("Please enter your number")) * 2;
+console.log(numberDouble);
 
+function double() {
+   alert (numberDouble);
+}
+console.log(double(numberDouble));
 
+*/
 
+// Are Identical Exercise
 
+/*
+function areIdentical(){
+   let input1 = prompt("Enter First Number");
+   let input2 = prompt("Enter Second Number");
+   if return (input1 = input2) = true
+} else (input1 == !input2) = false{
 
-
+}
+console.log(areIdentical());
+*/
 
 
 
