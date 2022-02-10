@@ -29,20 +29,22 @@ function showRandomNum() {
 }
 showRandomNum();*/
 
-// #3
+// #4
 
-/*let i = 1
+let i = 1
 
 for(i = 1; i <= 9; i++) {
-    let repeatNum = ''.repeat(9 - i) + (i + '').repeat(i);
-    console.log(repeatNum);*/
+    let repeatNum = (i + '').repeat(i);
+    console.log(repeatNum);
+}
 
 
-//#4
+//#5
+
 
 /*
-
-for (let i = 100; i >= 5; i--){
+for (let i = 100; i >= 5; i--) {
     if (i % 5 === 0)
         console.log(i);
-}*/
+}
+*/
