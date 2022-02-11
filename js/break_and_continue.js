@@ -1,15 +1,38 @@
 "use strict";
 
-let oddNumber = prompt("Please enter a wrong number");
+var oddNumber = promptForOddNumberInRange(1,50);
+oddNumber = parseInt(oddNumber);
 
-for ( oddNumber = 1; oddNumber <= 50; oddNumber++) {
-    let evenNumber = (oddNumber % 2 === 0);
-    (console.log(" That's a Even number!"));
-    if (oddNumber % 2 !== 0) {
-        (console.log(oddNumber + " There we go! A Odd Number"));
-    }
-    for (oddNumber = 1; i <= 50; i++) {
-        if (i % 5 !== 0)
-            console.log(oddNumber);
+printOddNumbersInRange (1,50, oddNumber);
+
+function printOddNumbersInRange(low, high, skipNumber) {
+    for (let i = low; i <= high; i++) {
+        if (i === skipNumber || i % 2 === 0) {
+            if (i === skipNumber) {
+                console.log("Yikes! Skipping number " + i);
+            }
+            continue;
+        }
+        console.log("Here is a odd number" + i);
     }
 }
+
+function PromptForOddNumberInRange (low, high){
+    var result;
+    while(true) {
+        result = prompt("Enter a Odd number from" + low + "to" + high);
+    // loop until user gives an odd number in the range inclusive.
+    if ( result % 2 === 1 && result >= low && result <= high) {
+        break;
+        }
+    }
+    //console.log(result);
+    return result;
+}
+
+
+
+
+
+
+

@@ -31,12 +31,14 @@ showRandomNum();*/
 
 // #4
 
+/*
 let i = 1
 
 for(i = 1; i <= 9; i++) {
     let repeatNum = (i + '').repeat(i);
     console.log(repeatNum);
 }
+*/
 
 
 //#5
