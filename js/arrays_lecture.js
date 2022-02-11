@@ -10,15 +10,15 @@ var dog4 = "Lola";*/
 // Fido is in the first placement
 // therefore I consider Fido to be an odd element
 // this even index valued will be considered an odd element
-var dogNames = ["Fido", "Spot", "Fifi", "Lola"];
-var dogAges = [5, 2, 3, 10];
+//var dogNames = ["Fido", "Spot", "Fifi", "Lola"];
+//var dogAges = [5, 2, 3, 10];
 
 //console.log("Dog Names: " + dogNames);
 //console.log(dogNames.length);
 
 // first element is at index 0
 // note that index can also be referred to as a subscript
-console.log(dogNames[1]); // should output fido
+//console.log(dogNames[1]); // should output fido
 //how to speak accessing elements
 // the element at index 0
 // the 0th element in the array
@@ -26,13 +26,13 @@ console.log(dogNames[1]); // should output fido
 
 // log the 2nd element
 // last element is at index -1
-var lastIndex = dogNames.length - 1;
-console.log(dogNames[lastIndex]); // should output lola
+//var lastIndex = dogNames.length - 1;
+//console.log(dogNames[lastIndex]); // should output lola
 // how to speak accessing the last element
 //the last element in the array
 // dogNames sub lastIndex
 
-console.log(dogNames[dogNames.length - 2]);
+//console.log(dogNames[dogNames.length - 2]);
 
 //arrays let you make a collection of the dog names
 //It is much easier to where you have to change your code to add a dog name
@@ -62,7 +62,7 @@ for (let i = dogNames.length - 1; i >= 0; i--);{
     }
 }*/
 
-dogNames.forEach(function(dogname,index) {
+//dogNames.forEach(function(dogname,index) {
     // this function will be excuted on each element
     //as the forEach  iterates over the array
     // if( a certain record) {
@@ -70,7 +70,7 @@ dogNames.forEach(function(dogname,index) {
     // }
 
     //dogName = "Zantor";
-dogNames[index] = "Zantor"
+/*dogNames[index] = "Zantor"
     //output the odd dogs ( i.e, the dog at the index 0 is an odd dog)
     if (index % 2 === 0) {
     console.log("Dog at Index " + index + " is" + dogName);
@@ -81,7 +81,72 @@ dogNames[index] = "Zantor"
     }
 });
 
+console.log(dogNames);*/
+
+
+
+
+var dogNames = ["Fido", "Spot", "Fifi", "Lola", "Fido"];
+
+//push
+dogNames.push("Ralph");
+console.log(dogNames);
+
+//unshift
+dogNames.unshift("Suzie");
+console.log(dogNames);
+
+//pop
+var poppedName = dogNames.pop();
+console.log("Removed " + poppedName);
+console.log(dogNames);
+
+
+//shift
+var shiftedName = dogNames.shift();
+console.log("Removed" + shiftedName);
 console.log(dogNames);
 
 
 
+// build an array with the following words IN ORDER, 1 word at a time
+
+
+/*var fruits = ['pear', 'lemon', 'cherry', 'apple', 'banana', 'mango'];
+
+fruits.push("apple");
+fruits.push("banana");
+fruits.unshift("cherry");
+fruits.unshift("lemon");
+fruits.push("mango");
+fruits.unshift("pear");
+
+console.log(fruits);*/
+
+
+//indexof
+
+console.log(dogNames.indexOf("Lola"));
+
+
+//lastIndexOf
+
+console.log(dogNames.lastIndexOf("Fido", 3));
+
+//slice
+console.log(dogNames.slice(1,3 ));
+
+//reverse
+//console.log(dogNames.reverse());
+//reverse also returns
+dogNames.reverse().forEach(function dogName, index){
+    console.log(dogNames);
+}
+//show backwards itteration in foreach
+
+//sort
+
+
+//split
+
+//join

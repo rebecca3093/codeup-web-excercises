@@ -44,8 +44,7 @@ for (let i = 0; i < names.length; i++) {
  */
 
 let foreach = names.foreach(function(aname, index)){
-    console.log(aname);{
-        }
+    console.log(aname);
 }
 
 /**
