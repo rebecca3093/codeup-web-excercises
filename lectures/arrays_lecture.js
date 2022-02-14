@@ -139,14 +139,33 @@ console.log(dogNames.slice(1,3 ));
 //reverse
 //console.log(dogNames.reverse());
 //reverse also returns
-dogNames.reverse().forEach(function dogName, index){
+// DOC ROB
+/*dogNames.reverse().forEach(function dogName, index){
     console.log(dogNames);
+}*/
+// RY
+
+/*let numbers = [1, 2, 3, 4, 5, 6];
+
+for (let i = numbers.length -1; i >= 0 ; i--){
+    console.log (numbers[i]);
 }
-//show backwards itteration in foreach
 
-//sort
+//==================================================
+
+let instructors = ['Casey', 'DocRob', 'Ry', 'Jay, "David'];
+
+instructors.sort();
+
+console.log(instructors);*/
 
 
-//split
+//Splitting and Joining
 
-//join
+
+
+
+
+
+
+
