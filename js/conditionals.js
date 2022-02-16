@@ -23,7 +23,7 @@
  */
 
 
-/*
+
 function analyzeColor(colors){
     if (colors === "red") {
         return console.log("apples are red");
@@ -42,9 +42,9 @@ function analyzeColor(colors){
     } else
         return console.log("We did not enter a color")
 }
-*/
 
-//analyzeColor("yellow");
+
+analyzeColor("yellow");
 
 
 
