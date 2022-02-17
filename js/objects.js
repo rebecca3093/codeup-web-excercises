@@ -96,8 +96,8 @@
         {
             title: 'Lord Of the Rings'
             author: {
-                firstName : 'J'.
-                lastName: T'Oilken'
+                firstName : 'J',
+                lastName: 'Toilken',
             }
         }, 'Harry Potter', 'Twilight', 'Hunger Games', 'Crazy Rich Asians'];
 
