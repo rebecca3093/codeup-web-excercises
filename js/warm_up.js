@@ -99,3 +99,40 @@ function ContactInfo(phoneNumber, streetAddress, city, state, postalCode, eMail)
 
 console.log(person2);
 // end of objects 02/16/2022
+
+//JS Object Warmup, pt 4:
+// We are going to create a method which
+// allows a user to input their desired amount of names names
+// use prompt, alert, confirm inside of a while loop
+//  - assign each name to an array
+//  once the user decides they are done giving names, end the loop and return the string array
+//  then assigning that returned array by invoking your new function on the Person.names property value!
+//  Things to consider:
+//  Should this be a standalone function or should it be a method on the Person object?
+
+function userInput(){
+    let namesArray = [];
+    let hasMoreNames = true;
+    while(hasMoreNames){
+        //get names
+
+        //prompt names
+        namesArray.push(prompt("Please enter your desired name"));
+        // asks if there are any additional names
+        hasMoreNames = confirm("Would you like to enter another name?");
+    }
+    return namesArray;
+}
+console.log(userInput());
+
+let person2 = new Person(
+    ["Rebecca", "M" , "Martinez"],
+    "Professional Podcast Listener",
+    '06/30/1993',
+    new ContactInfo(
+        '210-123-4567',
+        '123 Walaby Way',
+        'Sydney',
+        'Texas',
+        '78250',
+        'fakeperson@gmail.com'));
