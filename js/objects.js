@@ -11,13 +11,13 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez" */
 
-    let person = {};
+/*    let person = {};
 
     person.firstName = 'Becca'
     console.log(person);
 
     name.lastName = 'Martinez'
-    console.log(person);
+    console.log(person);*/
 
 
     /**
@@ -62,9 +62,9 @@
 
     shopper.forEach(function(shoppers){
 
-        console.log(shopper.ammount);
+        console.log(shopper.amount);
         if (shopper.amount > 200){
-            let discount = shopper.ammount * .12;
+            let discount = shopper.amount * .12;
             console.log(shoppers.name + ', your amount before discount is' + shoppers.amount + ", your discount is: $" + discount + 'your total after checkout is applied.' + discountAmount);
         }else {
             console.log(shopper.name + 'your total is: $' + shopper.amount);
@@ -92,23 +92,40 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
-    let books = [
+   let books = [
         {
-            title: 'Lord Of the Rings'
+            title: 'Lord Of the Rings',
             author: {
-                firstName : 'J',
+                firstName : 'J.R.R.',
                 lastName: 'Toilken',
             }
-        }, 'Harry Potter', 'Twilight', 'Hunger Games', 'Crazy Rich Asians'];
+        },
+        {
+            title: 'Harry Potter',
+            author: {
+                firstName: 'J.K.',
+                lastName: 'Rowling',
+            }
+        }, {
+        title:'Twilight',
+            author: {
+            firstName: 'Stephanie',
+                lastName: 'Meyer',
+            }
+        }, {
+        title: 'Hunger Games',
+            author: {
+            firstName: 'Suzanne',
+                lastName: 'Collins',
+            }
+        }, {
+        title: 'Crazy Rich Asians',
+            author:{
+            firstName: 'Kevin',
+                lastName: "Kwan",
+            }
 
-
-
-
-
-
-
-
-
+        }];
 
 
     /**
@@ -136,6 +153,12 @@
      *      ...
      */
 
+    let input = ("");
+    for(input = 0; input < books.length; input++){
+        console.log(books[input]);
+    }
+
+
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -146,5 +169,7 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+
 
 })();
