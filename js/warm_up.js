@@ -21,12 +21,12 @@ console.log(findAverage([95,74,86,100]));
 //   -occupation
 //Hard code some values in that object, then log it and its properties to the console
 
-let person = {
+/*let person = {
     fullName: ["Rebecca", "M" , "Martinez"],
     dateOfBirth: '06/30/1993',
     occupation: "Professional Podcast Listener"
 }
-    console.log(person);
+    console.log(person);*/
 
 /*let person2 = person;
 person2.fullName = ["Bryant", "Gutierrez"];
@@ -45,7 +45,7 @@ console.log(person2);*/
 // -email address
 // Hard code some values in that object, then log it and its properties to the console
 
-let contactInfo = {
+/*let contactInfo = {
     phoneNumber: '210-123-4567',
     streetAddress: '123 Walaby Way',
     city: 'Sydney',
@@ -97,7 +97,7 @@ function ContactInfo(phoneNumber, streetAddress, city, state, postalCode, eMail)
     this.eMail = eMail;
 }
 
-console.log(person2);
+console.log(person2);*/
 // end of objects 02/16/2022
 
 //JS Object Warmup, pt 4:
@@ -110,6 +110,7 @@ console.log(person2);
 //  Things to consider:
 //  Should this be a standalone function or should it be a method on the Person object?
 
+/*
 function userInput(){
     let namesArray = [];
     let hasMoreNames = true;
@@ -135,4 +136,45 @@ let person2 = new Person(
         'Sydney',
         'Texas',
         '78250',
-        'fakeperson@gmail.com'));
+        'fakeperson@gmail.com'));*/
+
+//TODO: Warmup: Create a function which returns true if the given argument is a number, false if it is not a number
+// Testcases to consider:
+// Numeric strings?
+// Boolean?
+// Arrays?
+// Objects?
+// To test, simply invoke your function inside a console.log and pass in values of different types (see above) as arguments
+
+
+
+
+function numbersOnly(input) {
+    if (input > 0){
+    return true;
+} else {
+    return false;
+}
+}
+console.log(numbersOnly('tiger'));
+console.log(numbersOnly('12'));
+
+
+
+// Casey's Walk-thru
+
+function isANumber(maybeANumber){
+    return !!parseFloat(maybeANumber); // give the opposite of the opposite of the truthiness
+}
+
+// string
+console.log(isANumber("zebra"));
+
+// numeric string
+console.log(isANumber('12'));
+
+
+
+
+
+
