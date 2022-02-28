@@ -1,3 +1,56 @@
+/*
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+a{
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: lightgrey;
+}
+
+nav ul{
+    font-family: "Work Sans", sans-serif;
+    display: flex;
+    list-style: none;
+    flex: 1;
+    justify-content: center;
+}
+
+.nav-logo{
+    font-family: "Montserrat", sans-serif;
+    font-size: 3em;
+    padding: .2em;
+    margin: auto;
+
+}
+
+
+nav ul li{
+    padding: 0.5em;
+}
+
+.nav-bar-left{
+    justify-content: flex-start;
+}
+
+.nav-bar-right{
+    justify-content: flex-end;
+
+}*/
+
+
 * {
     box-sizing: border-box;
 }
@@ -11,20 +64,22 @@ ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    align-items: center;
+    display: flex; /* made unordered list a flex container */
 }
 nav a {
     text-decoration: none;
     color: black;
-    font-family: Verdana;
-    display: inline-block;
-    padding: .2em;
-
+    font-family: "Montserrat";
+    display: inline-block; /* inline-block to increase clickable area beyond the text */
+    padding: 1em; /* increases clickable area of anchor tags on all sides by 1em */
 }
-
-nav ul li:nth-child(5) {
+nav a:hover {
+    background: blue;
+}
+nav ul li:nth-child(4) {
+    /*
+        this allows the last flex item to be right justified
+        by filling remaining space to the left of the flex item with margin
+    */
     margin-left: auto;
 }
-
-

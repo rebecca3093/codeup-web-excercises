@@ -20,7 +20,7 @@ a {
     max-width: 750px;
     margin: 0 auto;
     display: flex;
-    justify-content: center;
+    align-items: center;
     /* TODO: Make this a flex container and align it's items to the center*/
 }
 

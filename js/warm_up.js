@@ -149,7 +149,7 @@ let person2 = new Person(
 
 
 
-function numbersOnly(input) {
+/*function numbersOnly(input) {
     if (input > 0){
     return true;
 } else {
@@ -171,10 +171,46 @@ function isANumber(maybeANumber){
 console.log(isANumber("zebra"));
 
 // numeric string
-console.log(isANumber('12'));
+console.log(isANumber('12'));*/
+
+
+// 2-28-22 JS WARM-UP
+/*var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
+
+console.log(removeAll(bugs, "ant"));
+
+// should print
+[
+    'mosquito',
+    'scorpion',
+    'mosquito',
+    'typo',
+    'reference error',
+    'type error'
+]*/
 
 
 
+function removeAll(annArr, valueToRemove){
+    let filteredArr = [];
+    annArr.forEach(function (ele){
+    if (valueToRemove !== ele){
+    filteredArr .push(ele);
+    }
+    });
+    return filteredArr;
+}
+/*
+    for (let i = 0; < anArr.length; i++) {
+    if (valueToRemove === annArr[i]) {
+        continue;
+    }
+        filteredArr.push(anArr[i]);
+}
+    return filteredArr;
+}*/
+
+let bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
 
 
-
+console.log(removeAll(bugs, "ant"));

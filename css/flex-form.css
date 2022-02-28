@@ -32,6 +32,7 @@ body {
     position: relative;
     border: 20px solid rgba(0, 0, 0, 0.3);
     border-radius: 5px;
+    display: flex;
     margin: auto;
     justify-content: space-evenly;
     /* TODO: Add an automatic margin and a flex container to this selector */
