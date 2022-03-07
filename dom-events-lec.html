@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Events</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+<div class="line"></div>
+<div class="wrapper">
+    <header role="banner">
+        <nav role="navigation">
+            <h1><a href="#">Asperion</a></h1>
+            <ul class="nav-ul">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Technologies</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Contacts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <form action="">
+        <label for="search">SEARCH</label><input type="text" name="search" id="search">
+    </form>
+
+    <main role="main">
+        <section class="sec-intro" role="section">
+            <!--            <img src="https://www.techweekeurope.co.uk/wp-content/uploads/2012/07/wifimountaindownload.jpg" alt="" />-->
+            <h1>Be Innovative!</h1>
+        </section>
+        <section class="sec-boxes" role="section">
+            <article class="box">
+                <h1 id="vanilla">Open-minded</h1>
+                <p>Every option should be explored and tried no matter how unpredictable, impossible, insane or
+                    ridiculous does it looks or sound.</p>
+                <p class="hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dolor incidunt laudantium, natus nihil numquam optio pariatur perferendis, quidem recusandae sed vel vitae? Accusantium at laudantium minima neque nostrum quia?</p>
+                <button class="button" id="more" type="button" role="button" value="More">More</button>
+            </article>
+            <article class="box">
+                <h1>Creative</h1>
+                <p>Brainstorming, idea generation, playing sessions, note taking. You think you used everything? We will
+                    challenge your mind and its abilities to the limits.</p>
+            </article>
+            <article class="box">
+                <h1>Bold</h1>
+                <p>Our methods and ideas are are not written or following any books, curriculums or rules. We consider
+                    ourselves rebels and we are proud of it.</p>
+            </article>
+            <article class="box">
+                <h1>Smart</h1>
+                <p>Every project with innovation as a goal requires smart approach. Identify real problem first and look
+                    for the smartest and simplest solution later.</p>
+            </article>
+        </section>
+        <hr/>
+        <h1>Previous Projects</h1>
+        <article>
+            <h1>Neural network for Google</h1>
+            <p>People from Google approached us this January with offer to create new neural network for whole Google's
+                ecosystem. This idea was very interesting and looked almost impossible at first glance. However, our
+                engineers proved their expertise and built amazing autonomous platform. <a class="link"
+                                                                                           href="#">more...</a></p>
+        </article>
+        <article>
+            <h1>Faster operating system for Apple</h1>
+            <p>For a years, since founding days of a company, Apple always worked with its own operating system. In
+                October, this was about to change. Our company got chance to rewrite the history by creating brand new
+                OS for Apple. It was very difficult and all our employees worked hard every day. <a class="link"
+                                                                                                    href="#">more...</a>
+            </p>
+        </article>
+        <article>
+            <h1>Manufacturing technology for Intel</h1>
+            <p>Intel has been manufacturing company for many years. They always used the latest technologies to achieve
+                the best results with lowest costs. However, this was not enough. Intel decided to offer us something
+                that could disrupt whole technology sector. <a class="link" href="#">more...</a></p>
+        </article>
+        </section>
+        <section class="sec-standards" role="section">
+            <hr/>
+            <h1>Our Standards</h1>
+            <article>
+                <h1>Excellence</h1>
+                <p>Our goal is to give our customers the best solutions in highest aquality. Our employees strive for
+                    excellence and work hard to achieve it. Everything must work and be reliable. Great design must be
+                    both, aesthetic and functional. Product or service that pass these conditions will be
+                    everlasting.</p>
+            </article>
+            <article>
+                <h1>Uniqueness</h1>
+                <p>Our mantra is to create new paths. We are not interested in copying others because we know, that if
+                    you want to succeed, you have to be different, unique. Our customers know that we create unique
+                    products and experience for them. This is the best way to differentiate us and our brand from the
+                    noise on market. Unique, different and proud.</p>
+            </article>
+        </section>
+    </main>
+</div>
+<footer>
+    <nav role="navigation">
+        <ul class="nav-ul">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Technologies</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Contacts</a></li>
+        </ul>
+    </nav>
+    <p class="copy">&copy; Alex Devero Design 2014</p>
+</footer>
+<div class="line"></div>
+
+
+<script src="js/dom-events-lec.js"></script>
+</body>
+</html>
