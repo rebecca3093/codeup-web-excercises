@@ -3,59 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <title>Github</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
-<nav>
-    <img src="images/download.png" alt="github">
-    <h3>GitHub</h3>
-    <ul>
-        <li><a href="https://github.com/pulls">Pull Requests</a> </li>
-        <li><a href="https://github.com/issues"> Issues</a></li>
-        <li><a href="https://github.com/marketplace">Marketplace</a> </li>
-        <li><a href="https://github.com/explore"> Explore</a> </li>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="images/github-g.png" alt="" width="30" height="30" class="d-inline-block align-text-top">
+            Github
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav text-light">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Pull Requests</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Issues</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Marketplace</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active">Explore</a>
+                </li>
+            </ul>
+        </div>
+</nav>
+
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="images/codeup.png" alt="" width="30" height="30"
+                 class="d-inline-block align-text-top">
+            Codeup
+        </a>
+    </div>
+    <ul class="nav nav-tabs">
+        <li class="nav-item text-black">
+            <a class="nav-link active" aria-current="page" href="#">Repositories</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">People</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Teams</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link">Projects</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link">Settings</a>
+        </li>
     </ul>
 </nav>
-<section>
-    <img src="images/codeup.png" alt="Codeup">
-    <h3>CodeUp</h3>
-    <ul>
-        <li><a href="https://github.com/pulls">Repos </a> 39</li>
-        <li><a href="https://github.com/issues"> People </a> 39</li>
-        <li><a href="https://github.com/marketplace">Teams </a> 39</li>
-        <li><a href="https://github.com/explore"> Projects</a> 39</li>
-        <li><a href="https://github.com/explore"> Settings</a> 39</li>
-    </ul>
-</section>
 
-<section>
-    <h2>Codeup's Dev Team</h2>
-    <table>
-        <tr>
-            <th><img src="http://placeholder.pics/svg/48x48" alt="Kent"> Kent Beck</th>
-            <th><img src="http://placeholder.pics/svg/48x48" alt="Codeup Staff">Codeup Staff</th>
-            <th><img src="http://placeholder.pics/svg/48x48" alt="Martin">Martin F</th>
-        </tr>
-        <tr>
-            <td>Kent Beck</td>
-            <td>Member</td>
-            <td>X team member</td>
-        </tr>
-        <tr>
-            <td>Codeup Staff</td>
-            <td>Member</td>
-            <td>X team member</td>
-        </tr>
-        <tr>
-            <td>Martin F</td>
-            <td>Member</td>
-            <td>X Team Member</td>
-        </tr>
-    </table>
-</section>
 <br>
-<section>
-      &copy; 2018 Github. Inc
-</section>
+
+
+<!-- Dev Team Navbar -->
+<nav class="navbar  navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand text-black" href="#">Codeup Development Team</a>
+    </div>
+</nav>
+<br>
+
+<table>
+    <tr>
+        <th><img src="images/placeholder.jpeg" alt="Kent">Kent Beck</th>
+        <td>KentBeck</td>
+        <td>Members</td>
+        <td>1 Team</td>
+    </tr>
+    <tr>
+        <th><img src="images/placeholder-1.jpeg" alt="Codeup Staff">Codeup Instruction Staff</th>
+        <td>Codeup Instuctors</td>
+        <td>Member</td>
+        <td>1 Team</td>
+    </tr>
+    <tr>
+        <th><img src="images/placeholder-2.jpeg" alt="Martin">Martin Fowler</th>
+        <td></td>
+        <td>Member</td>
+        <td>1 Team</td>
+    </tr>
+
+</table>
+
+<br>
 
 <section>
     <a href="https://github.com/pulls">Terms</a>
