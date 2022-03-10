@@ -2,9 +2,14 @@
 .jumbotron{
     display: flex;
     justify-content: center;
-    background-image: url("https://java.codeup.com/examples/bootstrap/pizza.png");
 }
 
 h1{
-    background-color: transparent;
+    background-color: white;
+    align-items: center;
+    color: black;
+}
+
+#pizza-nav{
+    opacity: 70%;
 }
