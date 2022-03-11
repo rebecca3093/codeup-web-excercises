@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery</title>
+
+</head>
+<body>
+<div class="container-fluid">
+<h1 class="codeupHeader"> Hello Codeup</h1>
+
+<p class="today"> Today we will be learning about JQuery </p>
+
+<ul id="mylist">
+    <li id="list1">Item 1</li>
+    <li id="list2">Item 2</li>
+    <li id="list3">Item 3</li>
+    <li id="list4">Item 4</li>
+</ul>
+</div>
+<br>
+<hr>
+<br>
+<div class="container">
+    <h3 id="little-header">This is a header in a div</h3>
+    <p>This is text to fill up space inside a header.</p>
+    <or id="mylist-2">
+        <li id="num1">Item number one</li>
+        <li id="num2">Item number two</li>
+        <li id="num3">Item number three</li>
+    </or>
+</div>
+
+<div>
+    <li></li>
+    <li></li>
+    <li></li>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+
+<script>
+    "use strict";
+
+    $(".container-fluid").css({
+        "border-color": "purple",
+        "border-weight": "5px",
+        "border-style": 'solid'
+    });
+
+    $(".codeupHeader").css({color: 'green'});
+
+    $(".today").css({color: 'orange'});
+
+    $('#mylist').css({color: 'red'});
+
+
+    $(".container").css({
+        "border-color": "blue",
+        "border-weight": "5px",
+        "border-style": 'dashed'
+    });
+
+    $('hr').css({color: 'yellow' });
+
+    $('#mylist-2').css({color: 'pink'});
+
+    $("p").hover(function(){
+        $(this).css("background-color", "yellow");
+    }, function(){
+        $(this).css("background-color", "pink");
+    });
+
+    let littleHeader = $('little-header').html();
+    alert(littleHeader);
+    console.log(littleHeader);
+
+    $('little-header')
+
+</script>
+
+</body>
+</html>
+
