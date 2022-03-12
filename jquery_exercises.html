@@ -6,10 +6,11 @@
 
 </head>
 <body>
-<div class="container-fluid">
-<h1 class="codeupHeader"> Hello Codeup</h1>
 
-<p class="today"> Today we will be learning about JQuery </p>
+<div class="container-fluid">
+<h1 class="mainHeader"> Hello Codeup</h1>
+
+<p> Today we will be learning about JQuery </p>
 
 <ul id="mylist">
     <li id="list1">Item 1</li>
@@ -18,9 +19,13 @@
     <li id="list4">Item 4</li>
 </ul>
 </div>
+
 <br>
+
 <hr>
+
 <br>
+
 <div class="container">
     <h3 id="little-header">This is a header in a div</h3>
     <p>This is text to fill up space inside a header.</p>
@@ -29,13 +34,10 @@
         <li id="num2">Item number two</li>
         <li id="num3">Item number three</li>
     </or>
+    <br>
 </div>
 
-<div>
-    <li></li>
-    <li></li>
-    <li></li>
-</div>
+
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
@@ -44,40 +46,46 @@
 <script>
     "use strict";
 
-    $(".container-fluid").css({
+   /* $(".container-fluid").css({
         "border-color": "purple",
         "border-weight": "5px",
         "border-style": 'solid'
-    });
+    });*/
 
-    $(".codeupHeader").css({color: 'green'});
+    /*$(".mainHeader").css({color: 'green'});*/
 
-    $(".today").css({color: 'orange'});
-
-    $('#mylist').css({color: 'red'});
+    $("p").css({'color': 'orange', 'text-size': '18px'});
 
 
-    $(".container").css({
+    $('#mylist').hover(function()
+    {color: 'red'});
+
+
+    /*$(".container").css({
         "border-color": "blue",
         "border-weight": "5px",
         "border-style": 'dashed'
-    });
+    });*/
 
-    $('hr').css({color: 'yellow' });
+    /*$('#mylist-2').css({color: 'pink'});*/
 
-    $('#mylist-2').css({color: 'pink'});
-
-    $("p").hover(function(){
+   /* $("p").hover(function(){
         $(this).css("background-color", "yellow");
     }, function(){
         $(this).css("background-color", "pink");
+    });*/
+
+   /* let littleHeader = $('little-header').html();
+    alert(littleHeader);
+    console.log(littleHeader);*/
+
+
+    $(".mainHeader").hover(function(){
+        $(this).css("background-color", "purple");
+    }, function(){
+        $(this).toggleClass("clicked");
     });
 
-    let littleHeader = $('little-header').html();
-    alert(littleHeader);
-    console.log(littleHeader);
-
-    $('little-header')
 
 </script>
 
