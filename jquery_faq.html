@@ -3,15 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Jquery-FAQ</title>
+    <style>
+        .invisible{
+            visibility: hidden;
+        }
+    </style>
+
 </head>
 <body>
 
 
 <p>Cryptids of Texas:</p>
 
+<button href="#" id="display-dd">SHOW US THE CRYPTIDS!</button>
+
 <dl>
     <dt>The Wampus Cat</dt>
-    <dd>The Wampus Cat originally began as a tribal legend among Native American hunters in Tennessee.
+    <dd class="invisible"> The Wampus Cat originally began as a tribal legend among Native American hunters in Tennessee.
         Allegedly, a woman of the tribe who spied on the hunters while wearing a cougar skin was transformed
         into a half woman/half cougar by one of the tribal elders as a punishment. Other legends abound.
         Making its way into Texas, the Wampus Cat has been said to be a type big cat much like a cougar,
@@ -20,7 +28,7 @@
         and to disappear and reappear at will.</dd>
 
     <dt>Bigfoot</dt>
-    <dd>Bigfoot, Sasquatch, the Squatch Himself, whatever you want to call him,
+    <dd class="invisible"> Bigfoot, Sasquatch, the Squatch Himself, whatever you want to call him,
         Texas is not devoid of its own rumors, suspicions, and sightings
         of one of the most famous cryptids of all time.
         Texas has many sightings and reports of Bigfoot. Some have been “caught” on camera,
@@ -30,7 +38,7 @@
         regions, stay on the lookout. You could very well receive a visit from this famous beast.</dd>
 
     <dt>Hogzilla</dt>
-    <dd>Hogzilla is otherwise a name given to the rare development of extremely large wild/feral hogs.
+    <dd class="invisible">Hogzilla is otherwise a name given to the rare development of extremely large wild/feral hogs.
         Texas, with its exploding hog population, has encountered wide-ranging reports of giant hogs
         roaming the countryside. Cryptid hunters and cryptozoologists have been staking claims that there
         are hogs as big as 2000-3000 pounds out there in the wild based upon photos captured on game cameras.
@@ -41,24 +49,65 @@
 
 </dl>
 
+<h3>The Wampus Cat</h3>
+<ul>
+    <li>Hes Big</li>
+    <li>Hes Chonky</li>
+    <li>Hes Wild</li>
+    <li>Hes Scary</li>
+</ul>
+
+<h3>BigFoot</h3>
+<ul>
+    <li>Hes Big</li>
+    <li>Hes Chonky-ish</li>
+    <li>Hes Hairy</li>
+    <li>Hes Not-Scary</li>
+</ul>
+
+<h3>HogZilla</h3>
+<ul>
+    <li>Hes Big</li>
+    <li>Hes Ferral</li>
+    <li>Hes Wild</li>
+    <li>Hes Will Kill You</li>
+</ul>
+
+<button id="highlighter">Highlight the last of each ul</button>
+
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
         crossorigin="anonymous"></script>
 
 <script>
-
-    $("dd").addClass("invisible");
-    console.log($("dd"));
-
-    $("dl").after(<button id='toggle-button'> Toggler </button>);
+    $(document).ready(function () {
 
 
-    $('#toggle-button').click(function (){
-        $("dd").toggleClass('invisible');
+        $("#display-dd").click(function () {
+            $("dd").toggleClass('invisible');
+        });
+
+        $("dt").click(function () {
+            $("this").css("background-color", "yellow");
+        });
+
+        $("#highlighter").click(function (){
+            $('ul').each(function (){
+                $(this).children.last().toggleClass("background-color", "yellow");
+            });
+        });
+
+        $("h3").click(function (){
+            $(this).next().children().toggleClass("bold-font");
+        });
+
+        $('li').click(function (){
+            $(this).parent().children().first().css("color", "blue");
+        });
+
+
     });
-
-
 
 
 

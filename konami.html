@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<style>
+    h1 {
+        justify-content: center;
+    }
+
+
+</style>
+
+<body>
+<h1>Becca Code</h1>
+
+<p class="justify-content-center" id="konami-code">
+    <span> B </span>
+    <span> E </span>
+    <span> C </span>
+    <span> C </span>
+    <span> A </span>
+</p>
+
+<script
+        src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+
+<script>
+    "use strict";
+
+    // correct keys to get the konami code
+
+    $(document).ready(function () {
+        let correctKeys = ['67', '69', '67', '67', '65'];
+        let startingPosition = 0;
+
+        $(document).keydown(function () {
+            console.log(keyCode);
+            let expectedInput = correctKeys[startingPosition];
+
+            if (expectedInput === correctKeys.length) {
+                startingPosition++;
+                if (startingPosition === correctKeys.length) {
+                    alert('Good Job Bud!');
+                }
+            }
+        })
+    })
+
+
+</script>
+</body>
+</html>

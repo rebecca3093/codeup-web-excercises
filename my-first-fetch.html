@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+
+<script src="js/keys.js"></script>
+<!--<script>
+
+ /*   let lat = 33.44;
+    let lon = 94.04;
+    let units = "imperial";*/
+    // do fetch stuff
+
+    fetch('https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&appid=' + OMW_KEY)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data)
+        let html = '';
+        html+= '<ul>'
+        for (let i = 0; i < 5; i++) {
+            console.log(data.daily[i].temp.day);
+
+           html+= '<li>' + dailyTemp + '</li>';
+
+            }
+        html += '</ul>'
+        $('#weather').html(html);
+    });
+
+</script>-->
+
+
+<script>
+    const settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://spotify23.p.rapidapi.com/search/?q=%3CREQUIRED%3E&type=multi&offset=0&limit=10&numberOfTopResults=5",
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "spotify23.p.rapidapi.com",
+            "x-rapidapi-key": "afbd44fea6mshc8eddab6d10245cp1a9c09jsn6255020baaf8"
+        }
+    };
+
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+    });
+</script>
+</body>
+</html>
