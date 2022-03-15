@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery-FAQ</title>
+</head>
+<body>
+
+
+<p>Cryptids of Texas:</p>
+
+<dl>
+    <dt>The Wampus Cat</dt>
+    <dd>The Wampus Cat originally began as a tribal legend among Native American hunters in Tennessee.
+        Allegedly, a woman of the tribe who spied on the hunters while wearing a cougar skin was transformed
+        into a half woman/half cougar by one of the tribal elders as a punishment. Other legends abound.
+        Making its way into Texas, the Wampus Cat has been said to be a type big cat much like a cougar,
+        just larger, more fearsome, and possibly with various types of mystical powers. Cryptid hunters
+        and folklorists also report the Wampus Cat as a giant bobcat with an uncanny ability to swim
+        and to disappear and reappear at will.</dd>
+
+    <dt>Bigfoot</dt>
+    <dd>Bigfoot, Sasquatch, the Squatch Himself, whatever you want to call him,
+        Texas is not devoid of its own rumors, suspicions, and sightings
+        of one of the most famous cryptids of all time.
+        Texas has many sightings and reports of Bigfoot. Some have been “caught” on camera,
+        but none have been confirmed by science. While reports have been made in every
+        geographical region in the state, the highest concentration has come from
+        East and Southeast Texas, particularly the Piney Woods region. If you live in these
+        regions, stay on the lookout. You could very well receive a visit from this famous beast.</dd>
+
+    <dt>Hogzilla</dt>
+    <dd>Hogzilla is otherwise a name given to the rare development of extremely large wild/feral hogs.
+        Texas, with its exploding hog population, has encountered wide-ranging reports of giant hogs
+        roaming the countryside. Cryptid hunters and cryptozoologists have been staking claims that there
+        are hogs as big as 2000-3000 pounds out there in the wild based upon photos captured on game cameras.
+        Many of these photos have proven to be doctored photos and hoaxes. In Texas, the biggest
+        hogs on record have weighed around 800 pounds. While anyone will tell you an 800-pound hog
+        is gigantic, cryptid enthusiasts believe bigger hogs may be out there. Keep your eyes
+        peeled, you may spot the official Hogzilla.</dd>
+
+</dl>
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+
+<script>
+
+    $("dd").addClass("invisible");
+    console.log($("dd"));
+
+    $("dl").after(<button id='toggle-button'> Toggler </button>);
+
+
+    $('#toggle-button').click(function (){
+        $("dd").toggleClass('invisible');
+    });
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
+
+
+<!--  Sources-- https://texashillcountry.com/4-texas-cryptids/-->
