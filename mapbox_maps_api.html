@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Mapbox Map</title>
+    <!-- Mapbox CSS -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet'/>
+    <!-- Custom CSS -->
+    <style>
+        h1,h4 {
+            display: flex;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-weight: lighter;
+            justify-content: center;
+        }
+
+        #buttons{
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-weight: lighter;
+            justify-content: center;
+        }
+
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+
+</head>
+<body>
+
+<h1>Rebecca's Favorite Restaurants!</h1>
+<div id="buttons">
+<button id="maryLous">Mary Lou's Cafe</button>
+<button id="blancoBbq">Blanco BBQ</button>
+<button id="haleiwa">Cafe Haleiwa</button>
+</div>
+
+
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+<!-- Keys JS -->
+<script src="js/keys.js"></script>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+<!-- Mapbox JS -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<!-- Geocoder JS -->
+<script src="js/geocoder-utils.js"></script>
+<!-- Custom JS -->
+
+<script>
+
+    let favPlacesToEat = [{
+        Name: 'Mary Lous Cafe',
+        Address: '4405 McCullough Ave San Antonio, TX 78212',
+        coordinates: [-98.492010, 29.473480]
+    }, {
+        Name: 'Blanco BBQ',
+        Address: '13259 Blanco Rd, San Antonio, TX 78216',
+        coordinates: [-98.520690, 29.565260]
+    }, {
+        Name: 'Cafe Haleiwa',
+        Address: '66-460 Kamehameha Hwy, Haleiwa, HI 96712',
+        coordinates: [-158.105990, 21.579410]
+    }];
+
+
+    let startingLat = 29.4252;
+    let startingLon = -98.4916;
+
+    let map = initMap(startingLon, startingLat);
+    let marker = createMarker(startingLon, startingLat);
+    let popup = createPopup(startingLon, startingLat);
+
+    marker.setPopup(popup);
+
+    //Function to Create Map
+    function initMap(lon,lat) {
+        mapboxgl.accessToken = MAP_Key;
+        return new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            zoom: 11,
+            center: [lon, lat]
+        });
+    }
+
+    //Create a Marker
+    function createMarker(lon, lat) {
+        return new mapboxgl.Marker()
+            .setLngLat([lon,lat])
+            .addTo(map);
+    }
+
+    // can reset map prop. programmatically
+    // map.setZoom(1-24);
+    //map.setCenter([lat, lon]}
+
+    //function to create popup
+
+    function createPopup(lon, lat) {
+        return new mapboxgl.Popup()
+            .setLngLat([lon,lat])
+            .setHTML('')
+    }
+
+    <!-- geocode -->
+    // the  geocode method from mapbox-geocoder-utils.js
+
+    $('maryLous').click(function () {
+        geocode("4405 McCullough Ave San Antonio, TX 78212", MAP_Key).then(function (result) {
+            console.log(result);
+            map.setCenter(result);
+            map.setZoom(15);
+        })
+    });
+
+    $('blancoBbq').click(function () {
+        geocode("13259 Blanco Rd, San Antonio, TX 78216", MAP_Key).then(function (result) {
+            console.log(result);
+            map.setCenter(result);
+            map.setZoom(15);
+        })
+    });
+
+    $('haleiwa').click(function () {
+        geocode("66-460 Kamehameha Hwy, Haleiwa, HI 96712", MAP_Key).then(function (result) {
+            console.log(result);
+            map.setCenter(result);
+            map.setZoom(15);
+        })
+    });
+
+
+
+</script>
+</body>
+</html>
+
