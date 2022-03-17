@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +11,7 @@
 <body>
 
 <script src="js/keys.js"></script>
-<!--<script>
+&lt;!&ndash;<script>
 
  /*   let lat = 33.44;
     let lon = 94.04;
@@ -33,24 +34,37 @@
         $('#weather').html(html);
     });
 
-</script>-->
+</script>&ndash;&gt;
 
 
 <script>
-    const settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": "https://spotify23.p.rapidapi.com/search/?q=%3CREQUIRED%3E&type=multi&offset=0&limit=10&numberOfTopResults=5",
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-host": "spotify23.p.rapidapi.com",
-            "x-rapidapi-key": "afbd44fea6mshc8eddab6d10245cp1a9c09jsn6255020baaf8"
-        }
-    };
 
-    $.ajax(settings).done(function (response) {
-        console.log(response);
-    });
 </script>
+
 </body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ghibli App</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet">
+    <link href="css/ghibli.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div id="root"></div>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+<script src="js/keys.js"></script>
+</body>
+
 </html>
