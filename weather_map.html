@@ -8,13 +8,12 @@
 </head>
 <body>
 <!-- Header -->
-<div class="top-container">
-    <i class="wi wi-cloud " style="font-size: 80px"></i>
+<div class="top-header">
     <h1>Find Weather in Your Area!</h1>
 </div>
 
 <!--   LAT AND LON INPUTS   -->
-<div id='map'></div>
+
 <div class="lng-lat-input container">
     <label>
         <input class="lat-input" type="text" placeholder="latitude">
@@ -26,16 +25,22 @@
     <br>
     <button class="submit">Submit</button>
 </div>
-
+<br>
+<div id='map'></div>
+<br>
 <div id="weather"></div>
+<br>
 
-
-
-
+<!-- Mapbox JS -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<!-- Geocoder JS -->
+<script src="js/geocoder-utils.js"></script>
+<!-- API KEYS -->
 <script src="js/keys.js"></script>
-<script src ="js/mapbox_maps_api.js"></script>
+<!-- JQUERY -->
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<!-- WEATHER-MAP JS -->
 <script src="js/weather_map.js"></script>
 
 </body>

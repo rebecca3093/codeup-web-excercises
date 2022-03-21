@@ -1,11 +1,9 @@
-
-
 let startingLat = 33.44;
 let startingLon = -94.04;
 
 getWeatherData(startingLat, startingLon);
 
-function getWeatherData () {
+function getWeatherData (lon,lat) {
     fetch("https://api.openweathermap.org/data/2.5/weather?lat=33.44&lon=-94.04&appid=" + OMW_Key)
         .then((response) => {
             if (response.ok) {
@@ -25,8 +23,6 @@ function getWeatherData () {
             //console.log(error);
         });
 }
-
-
 function extractWeatherData(dayObj) {
     return {
         date: dayObj.dt,
@@ -54,13 +50,7 @@ function buildWeatherCard(day) {
             <div class="card" style="width: 20rem;">
                 <div class="card-header">
                     ${formattedDate}
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Temp: ${weather.dailyTemp}</li>
-                    <li class="list-group-item">Hum: ${weather.humidity}</li>
-                    <li class="list-group-item">Pressure: ${weather.pressure}</li>
-                </ul>
-            </div>`
+                `
     return html;
 }
 
@@ -73,4 +63,48 @@ $('#submit').click(function (e) {
     let userLat = $('#lat').val();
     let userLon = $('#lon').val();
     getWeatherData(userLat, userLon);
+})
+
+
+// Mapbox JS
+
+
+let map = initMap(startingLon, startingLat);
+let marker = createMarker(startingLon, startingLat);
+let popup = createPopup(startingLon, startingLat);
+
+marker.setPopup(popup);
+
+//Function to Create Map
+function initMap(lon,lat) {
+    mapboxgl.accessToken = MAP_Key;
+    return new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 11,
+        center: [lon, lat]
+    });
+}
+
+//Create a Marker
+function createMarker(lon, lat) {
+    return new mapboxgl.Marker()
+        .setLngLat([lon,lat])
+        .addTo(map);
+}
+
+//function to create popup
+
+function createPopup(lon, lat) {
+    return new mapboxgl.Popup()
+        .setLngLat([lon,lat])
+        .setHTML('')
+}
+
+$('#userDestination').click(function () {
+    geocode(('userLat, User Lon'), MAP_Key).then(function(result) {
+        console.log(result);
+        map.setCenter(result);
+        map.setZoom(17);
+    });
 })
