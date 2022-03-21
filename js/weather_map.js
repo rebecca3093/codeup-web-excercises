@@ -16,7 +16,7 @@ function getWeatherData (lon,lat) {
         .then((data) => {
             // Work with JSON data here
             $('#weather').html(buildCardCont(data.daily));
-            $('#submit')
+            //$('#submit')
             console.log(data)
         })
         .catch(error => {
@@ -47,10 +47,17 @@ function buildWeatherCard(day) {
     let formattedDate = formatDate(weather.date);
     // language=HTML
     html += `
-            <div class="card" style="width: 20rem;">
-                <div class="card-header">
-                    ${formattedDate}
-                `
+        <div class="card" style="width: 18rem;">
+            <div class="card-header">
+                ${formattedDate}
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Temp: ${weather.dailyTemp}</li>
+                <li class="list-group-item">Hum: ${weather.humidity}</li>
+                <li class="list-group-item">Pressure: ${weather.pressure}</li>
+            </ul>
+        </div>
+    <br>`
     return html;
 }
 

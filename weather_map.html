@@ -4,31 +4,28 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="css/weather-map.css">
 </head>
 <body>
 <!-- Header -->
-<div class="top-header">
+<div>
     <h1>Find Weather in Your Area!</h1>
 </div>
 
 <!--   LAT AND LON INPUTS   -->
 
 <div class="lng-lat-input container">
-    <label>
-        <input class="lat-input" type="text" placeholder="latitude">
-    </label>
+    <input class="lat-input" type="text" placeholder="latitude">
     <br>
-    <label>
-        <input class="lng-input" type="text" placeholder="longitude">
-    </label>
+    <input class="lng-input" type="text" placeholder="longitude">
     <br>
-    <button class="submit">Submit</button>
+    <button id="submit">Submit</button>
 </div>
 <br>
-<div id='map'></div>
-<br>
+<!-- MAP and DIVS -->
 <div id="weather"></div>
+<br>
+<div id="map"></div>
 <br>
 
 <!-- Mapbox JS -->
@@ -45,3 +42,4 @@
 
 </body>
 </html>
+

@@ -2,225 +2,164 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Weathers R' Us</title>
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-
-    <!-- BOOTSTRAP CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <!-- MAPBOX API -->
-    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.css' type='text/css' />
-
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link href="css/weather-map.css">
 </head>
 <body>
+<!-- Header -->
+<div class="top-header">
+    <h1>Find Weather in Your Area!</h1>
+</div>
 
-<!--    BASIC HTML FOR WEATHER DISPLAY  -->
-<div class="top-container">
-    <i class="wi wi-cloud " style="font-size: 80px"></i>
-    <h1><u>Today's Weather</u></h1>
-    <h5>Brought to you by - <em>Alexander The Great</em></h5>
-</div>
-<div class="container">
-    <div class='row' id="insertData"></div>
-</div>
-<br>
-<!--   LAT AND LNG INPUTS   -->
-<div id='map'></div>
+<!--   LAT AND LON INPUTS   -->
+
 <div class="lng-lat-input container">
-    <input class="lat-input" type="text" placeholder="latitude">
+    <label>
+        <input class="lat-input" type="text" placeholder="latitude">
+    </label>
     <br>
-    <input class="lng-input" type="text" placeholder="longitude">
+    <label>
+        <input class="lng-input" type="text" placeholder="longitude">
+    </label>
     <br>
     <button class="submit">Submit</button>
-
 </div>
 <br>
-<style>
+<div id='map'></div>
+<br>
+<div id="weather"></div>
+<br>
 
-    body {
-        background-color: skyblue;
-        text-align: center;
-    }
-
-    h5  {
-        padding-bottom: 20px;
-    }
-
-    .top-container {
-        background-color: white;
-    }
-
-    .container {
-        padding-top: 22px;
-    }
-
-    #map {
-        padding-top: 20px;
-        width: 59%;
-        height: 700px;
-        margin:0px auto;
-    }
-
-    .lng-lat-input{
-        padding-top: 10px;
-    }
-
-    .lng-input {
-        margin-top: 10px;
-    }
-
-    .submit {
-        margin-top: 10px;
-        margin-left: 123px;
-    }
-
-</style>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="js/jquery-2.2.4.js"></script>
-<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.min.js'></script>
+<!-- Mapbox JS -->
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
-<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.0/mapbox-gl.css' rel='stylesheet' />
+<!-- Geocoder JS -->
+<script src="js/geocoder-utils.js"></script>
+<!-- API KEYS -->
+<script src="js/keys.js"></script>
+<!-- JQUERY -->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<!-- WEATHER-MAP JS -->
+<script src="js/weather_map.js"></script>
 
-<script src="keys.js"></script>
 <script>
-    /** ----------------------MINIMUM REQUIREMENTS-----------------------
-     * 0. Locate where (city) weather is. (Do this last maybe..???)
-     * 1. Needs to display the temperature at the top (larger font size??).
-     * 2. Place image/icon right below.
-     * 3. Type of weather (cloudy, heavy rain, snow, sunshine...)
-     * 4. Humidity.
-     * 5. Wind.
-     * 6. Pressure.
-     */
+    let startingLat = 33.44;
+    let startingLon = -94.04;
 
-    "use strict";
-    //-------------------- WEATHER ARRAY --------------------
-    var iconArr = [
-        {
-            iconName: "clear-day",
-            icon: 'wi-day-sunny'
-        },
+    getWeatherData(startingLat, startingLon);
 
-        {
-            iconName: "clear-night",
-            icon: 'wi-night-clear'
-        },
-
-        {
-            iconName: "rain",
-            icon: 'wi-rain'
-        },
-
-        {
-            iconName: "snow",
-            icon: 'wi-snow'
-        },
-
-        {
-            iconName: "sleet",
-            icon: 'wi-sleet'
-        },
-
-        {
-            iconName: "wind",
-            icon: 'wi-windy'
-        },
-
-        {
-            iconName: "fog",
-            icon: 'wi-fog'
-        },
-
-        {
-            iconName: "cloudy",
-            icon: 'wi-cloudy'
-        },
-
-        {
-            iconName: "partly-cloudy-day",
-            icon: 'wi-day-cloudy'
-        },
-
-        {
-            iconName: "partly-cloudy-night",
-            icon: 'wi-night-alt-cloudy'
-        }
-    ];
-    //  For loop that iterates through icons depending on the weather
-    function getIcon(input) {
-        for(var i = 0; i <= iconArr.length; i++) {
-            if(iconArr[i].iconName === input) {
-                return iconArr[i].icon;
-            }
+    function getWeatherData (lon,lat) {
+        fetch("https://api.openweathermap.org/data/2.5/weather?lat=33.44&lon=-94.04&appid=" + OMW_Key)
+            .then((response) => {
+                if (response.ok) {
+                    console.log("GREAT SUCCESS")
+                } else {
+                    console.log("NOT  SUCCESSFUL")
+                }
+                return response.json()
+            })
+            .then((data) => {
+                // Work with JSON data here
+                $('#weather').html(buildCardCont(data.daily));
+                $('#submit')
+                console.log(data)
+            })
+            .catch(error => {
+                //console.log(error);
+            });
+    }
+    function extractWeatherData(dayObj) {
+        return {
+            date: dayObj.dt,
+            dailyTemp: dayObj.temp.day,
+            humidity: dayObj.humidity,
+            pressure: dayObj.pressure
         }
     }
 
+    function buildCardCont(dayArr) {
+        let html = '<div class="row">'
+        for (let i = 0; i < 5; i++) {
+            html += buildWeatherCard(dayArr[i]);
+        }
+        html += '</div>';
+        return html;
+    }
 
-    mapboxgl.accessToken = mapboxToken;
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v11',
-        center: [-98.4916, 29.4252],
-        zoom: 10
-    });
+    function buildWeatherCard(day) {
+        let html = '';
+        let weather = extractWeatherData(day);
+        let formattedDate = formatDate(weather.date);
+        // language=HTML
+        html += `
+            <div class="card" style="width: 18rem;">
+                <div class="card-header">
+                    ${formattedDate}
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Temp: ${weather.dailyTemp}</li>
+                    <li class="list-group-item">Hum: ${weather.humidity}</li>
+                    <li class="list-group-item">Pressure: ${weather.pressure}</li>
+                </ul>
+            </div>`
+        return html;
+    }
 
-    var lat = 29.424;
-    var long = -98.4936;
+    function formatDate(unixDate) {
+        return new Date(unixDate * 1000).toISOString().split('T')[0];
+    }
 
-    map.addControl(new MapboxGeocoder({
-        accessToken: mapboxgl.accessToken,
-        mapboxgl: mapboxgl,
-        marker: false
-    }));
-
-    var marker = new mapboxgl.Marker({
-        draggable: true
+    $('#submit').click(function (e) {
+        e.preventDefault();
+        let userLat = $('#lat').val();
+        let userLon = $('#lon').val();
+        getWeatherData(userLat, userLon);
     })
-        .setLngLat([long, lat])
-        .addTo(map);
-
-    map.on("moveend", function() {
-        marker.setLngLat(map.getCenter());
-        dragPoint();
-    });
-
-    function dragPoint() {
-        var lngLat = marker.getLngLat();
-        var newLat = lngLat.lng;
-        var newLng = lngLat.lat;
 
 
+    // Mapbox JS
 
 
-        //Links to dark sky weather API information
-        $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/" + newLng + "," + newLat).done(function(data) {
-            console.log(data);
+    let map = initMap(startingLon, startingLat);
+    let marker = createMarker(startingLon, startingLat);
+    let popup = createPopup(startingLon, startingLat);
 
-            //Pulls forcast from weather API and displays it
-            var weatherHTML = "";
-            for(var i = 0; i <= 2; i++) {
-                weatherHTML += '<div class="col-4 card text-center">';
-                weatherHTML += '<h1>' + (data.daily.data[i].temperatureHigh).toFixed(0) + '&deg;/' +
-                    (data.daily.data[i].temperatureLow).toFixed(0) + '&deg;</h1>';
+    marker.setPopup(popup);
 
-                weatherHTML += '<i style="font-size: 30pt" class="wi ' +
-                    getIcon(data.daily.data[i].icon) + '"></i>';        //icon display
-
-                weatherHTML += '<p><strong>' + data.daily.data[i].summary + ' </strong>' + '</p>';
-                weatherHTML += '<p><strong>Humidity: </strong>' +
-                    (data.daily.data[i].humidity * 100).toFixed(0) + '</p>';
-                weatherHTML += '<p><strong>Wind: </strong>' + data.daily.data[i].windSpeed + '</p>';
-                weatherHTML += '<p><strong>Pressure: </strong>' + data.daily.data[i].pressure + '</p>';
-                weatherHTML += '</div>';
-            }
-            $("#insertData").html(weatherHTML);
+    //Function to Create Map
+    function initMap(lon,lat) {
+        mapboxgl.accessToken = MAP_Key;
+        return new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            zoom: 11,
+            center: [lon, lat]
         });
     }
-    marker.on('drag', dragPoint);
-    dragPoint();
 
+    //Create a Marker
+    function createMarker(lon, lat) {
+        return new mapboxgl.Marker()
+            .setLngLat([lon,lat])
+            .addTo(map);
+    }
+
+    //function to create popup
+
+    function createPopup(lon, lat) {
+        return new mapboxgl.Popup()
+            .setLngLat([lon,lat])
+            .setHTML('')
+    }
+
+    $('#userDestination').click(function () {
+        geocode(('userLat, User Lon'), MAP_Key).then(function(result) {
+            console.log(result);
+            map.setCenter(result);
+            map.setZoom(17);
+        });
+    })
 </script>
-
 </body>
 </html>

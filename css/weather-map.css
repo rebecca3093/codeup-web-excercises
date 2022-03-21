@@ -1,0 +1,20 @@
+h1,h4 {
+    display: flex;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-weight: lighter;
+    justify-content: center;
+}
+
+#buttons{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-weight: lighter;
+    justify-content: center;
+}
+
+#map {
+    /* the width and height may be set to any size */
+    width: 80%;
+    height: 400px;
+    margin: auto;
+}
+
