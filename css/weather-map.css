@@ -1,7 +1,8 @@
-h1,h4 {
-    display: flex;
+body{
+    background-color: lightblue;
+    color: dimgrey;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-weight: lighter;
+    font-weight: normal;
     justify-content: center;
 }
 
@@ -12,9 +13,68 @@ h1,h4 {
 }
 
 #map {
-    /* the width and height may be set to any size */
-    width: 80%;
-    height: 400px;
+    width: 70%;
+    height: 300px;
+    justify-content: center;
     margin: auto;
+    border-color: white;
+    border-radius: 15px;
 }
 
+input{
+    width: 200px;
+    border-radius: 15px;
+}
+
+.user-search{
+    display: flex;
+    justify-content: center ;
+}
+
+.card{
+    width: 12.5rem;
+    height: 250px;
+    background-color: #8fd3f4;
+    color: #444444;
+    border-radius: 15px;
+}
+
+
+.list-group{
+    display: flex;
+    justify-items: center;
+    background-color: #F6F6F6;
+}
+#submit{
+    background-color: dimgrey;
+    color: lightblue;
+    border-color: lightblue;
+}
+
+#weather{
+    display: flex;
+    justify-content: center;
+}
+
+.card-header{
+    display: flex;
+    justify-content: center;
+}
+
+.navbar{
+    background-color: #F6F6F6;
+}
+
+.coordinates {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    position: absolute;
+    bottom: 40px;
+    left: 10px;
+    padding: 5px 10px;
+    margin: 0;
+    font-size: 11px;
+    line-height: 18px;
+    border-radius: 3px;
+    display: none;
+}

@@ -4,28 +4,30 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="css/weather-map.css">
 </head>
 <body>
 <!-- Header -->
-<div>
-    <h1>Find Weather in Your Area!</h1>
-</div>
 
-<!--   LAT AND LON INPUTS   -->
-
-<div class="lng-lat-input container">
-    <input class="lat-input" type="text" placeholder="latitude">
-    <br>
-    <input class="lng-input" type="text" placeholder="longitude">
-    <br>
-    <button id="submit">Submit</button>
-</div>
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand">
+            <img src="images/weather-icon2.png" alt="" width="40" height="40">
+            Lets Check the Weather </a>
+        <form class="d-flex">
+            <input class="city-input" type="search" placeholder="Where to go?" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
+        </form>
+    </div>
+</nav>
 <br>
+
 <!-- MAP and DIVS -->
 <div id="weather"></div>
 <br>
 <div id="map"></div>
+<pre id="coordinates" class="coordinates"></pre>
 <br>
 
 <!-- Mapbox JS -->

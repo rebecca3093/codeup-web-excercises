@@ -18,6 +18,7 @@ function initMap(lon,lat) {
     });
 }
 
+
 //Create a Marker
 function createMarker(lon, lat) {
     return new mapboxgl.Marker()
