@@ -1,8 +1,8 @@
 body{
-    background-color: lightblue;
+    background-color: #E1F1DD;
     color: dimgrey;
     justify-content: center;
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Quicksand',sans-serif;
     font-weight: bolder;
 }
 
@@ -16,14 +16,18 @@ body{
     justify-content: center;
     margin: auto;
     border-color: white;
-    border-radius: 15px;
+    border-radius: 5px;
 }
 
 input{
     width: 200px;
-    border-radius: 15px;
-    font-size: 18px;
-    justify-items: center;
+    background-color: #E1F1DD;
+    border-color: #E1F1DD;
+    color: #444444;
+    border-radius: 5px;
+    font-size: 15pxpx;
+    margin-right: 5px;
+    justify-content: center;
 }
 
 .user-search {
@@ -34,10 +38,9 @@ input{
 .card{
     width: 12.5rem;
     height: 250px;
-    background-color: #8fd3f4;
+    background-color: #87A7B3;
     color: #444444;
-    border-radius: 15px;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 
@@ -45,18 +48,18 @@ input{
     display: flex;
     justify-items: center;
     background-color: #F6F6F6;
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Quicksand',sans-serif;
     font-weight: bolder;
 }
 #submit{
-    background-color: dimgrey;
-    color: lightblue;
-    border-color: lightblue;
+    background-color: #87A7B3;
+    color: #E1F1DD;
 }
 
 #weather{
     display: flex;
     justify-content: center;
+    margin-top: 10px;
 }
 
 .card-header{
@@ -64,10 +67,16 @@ input{
     justify-content: center;
 }
 
-.navbar{
-    background-color: #F6F6F6;
+#navbar{
+    background-color: #CDC7BE;
+}
+#letsCheck {
+    color: #444444;
+    font-size: 30px;
 }
 .navbar-brand{
-    font-family: 'Shadows Into Light', cursive;
-    font-size: 30px;
+    font-family: 'Quicksand',sans-serif;
+    font-size: 50px;
+    color: #766161;
+    background-color: #CDC7BE;
 }

@@ -47,6 +47,7 @@ function buildWeatherCard(day) {
     let html = '';
     let weather = extractWeatherData(day);
     let formattedDate = formatDate(weather.date);
+
     // language=HTML
     html += `
         <div class="card">
@@ -63,6 +64,9 @@ function buildWeatherCard(day) {
         <br>`
     return html;
 }
+
+
+
 
 function formatDate(unixDate) {
     return new Date(unixDate * 1000).toISOString().split('T')[0];
@@ -126,7 +130,7 @@ function initGeocoder() {
 }
 
 function MapboxGeocoder() {
-    marker: true
+    marker: true;
 }
 
 geocodeObject = new MapboxGeocoder({
@@ -146,4 +150,6 @@ geocodeObject.on('result', function () {
 function onDragEnd() {
     console.log(marker.getLngLat());
 }
+
+
 
