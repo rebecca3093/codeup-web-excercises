@@ -35,9 +35,10 @@
     $(document).ready(function () {
         let correctKeys = ['67', '69', '67', '67', '65'];
         let startingPosition = 0;
+        let endingPosition = 4
 
         $(document).keydown(function () {
-            console.log(keyCode);
+            console.log(startingPosition);
             let expectedInput = correctKeys[startingPosition];
 
             if (expectedInput === correctKeys.length) {
