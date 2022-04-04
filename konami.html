@@ -1,55 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Konami Code</title>
 </head>
+<body>
 <style>
-    h1 {
+
+    body{
+    background-color: #ffafbd;
+    }
+    h1{
+        display: flex;
         justify-content: center;
+        font-size: 50px;
     }
 
-
+    p{
+        display: flex;
+        justify-content: center;
+        font-size: 25px;
+    }
 </style>
 
-<body>
-<h1>Becca Code</h1>
+<h1>Welcome to Becca's Konami Code!</h1>
 
-<p class="justify-content-center" id="konami-code">
-    <span> B </span>
-    <span> E </span>
-    <span> C </span>
-    <span> C </span>
-    <span> A </span>
-</p>
+<br>
 
-<script
-        src="https://code.jquery.com/jquery-2.2.4.min.js"
-        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-        crossorigin="anonymous"></script>
+<p> Please type in "b", "e", "c", "c", "a" to activate Konami function!</p>
 
 <script>
-    "use strict";
 
-    // correct keys to get the konami code
+    let keys = {
+        66: "b",
+        69: "e",
+        67: "c",
+        67: "c",
+        65: "a"
+    };
 
-    $(document).ready(function () {
-        let correctKeys = ['67', '69', '67', '67', '65'];
-        let startingPosition = 0;
-        let endingPosition = 4
+    let konamiCode = ["b", "e", "c", "c", "a"];
 
-        $(document).keydown(function () {
-            console.log(startingPosition);
-            let expectedInput = correctKeys[startingPosition];
+    document.addEventListener("keydown", checkCode, false);
 
-            if (expectedInput === correctKeys.length) {
-                startingPosition++;
-                if (startingPosition === correctKeys.length) {
-                    alert('Good Job Bud!');
-                }
+    let keyCount = 0;
+
+    function checkCode(event) {
+        let keyPressed = keys[event.keyCode];
+
+        if (keyPressed === konamiCode[keyCount]) {
+            keyCount++;
+
+            if (keyCount === konamiCode.length) {
+                cheatCodeActivated();
+                resetKeys();
             }
-        })
-    })
+        } else {
+            resetKeys();
+        }
+    }
 
+    function cheatCodeActivated() {
+        alert("YOU DID IT!!!");
+    }
+
+    function resetKeys() {
+        keyCount = 0;
+    }
 
 </script>
 </body>
