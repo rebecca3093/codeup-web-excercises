@@ -40,8 +40,6 @@
         let btn4 = document.getElementById("btn4");
 
 
-
-
         // TODO: Uncomment next line and get the main header element by id
         let mainHeader = document.getElementById('main-header');
 
@@ -64,7 +62,7 @@ btn1.addEventListener("click", function(){
 
         // TODO: Set text color on every other list item to grey
         /* listItems.style.color = "grey";*/
-        btn2.addEventListener("click", function() {
+        btn3.addEventListener("click", function() {
         for (let i = 0; i < listItems.length; i++) {
             if (i % 2 === 0) {
                 listItems[i].style.color = "grey"
@@ -82,7 +80,9 @@ btn1.addEventListener("click", function(){
         var subParagraphs = document.getElementsByClassName("sub-paragraph");
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs[0].innerText = "Mission Accomplished!!";
+       btn4.addEventListener("click", function (){
+           subParagraphs[0].innerText = "Mission Accomplished!!";
+       })
 
 
 
