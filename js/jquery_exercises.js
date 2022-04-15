@@ -1,4 +1,4 @@
-let mainHeader = $('main-header'):
+let mainHeader = $('main-header');
 alert(mainHeader)
 
 let subHeader = $('main-header').html();

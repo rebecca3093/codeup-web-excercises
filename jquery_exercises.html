@@ -7,35 +7,42 @@
 </head>
 <body>
 
-<div class="container-fluid">
-<h1 class="mainHeader"> Hello Codeup</h1>
+<h1 class="mainHeader"> My Favorite Music</h1>
 
-<p> Today we will be learning about JQuery </p>
+<p> Today we will list out my favorite artists.</p>
 
-<ul id="mylist">
-    <li id="list1">Item 1</li>
-    <li id="list2">Item 2</li>
-    <li id="list3">Item 3</li>
-    <li id="list4">Item 4</li>
+<ul>
+    <li class="punk">Fall Out Boy</li>
+    <li class="punk">Paramore</li>
+    <li id="t-Swift">Taylor Swift</li>
+    <li class="genius">Kendrick Lamar</li>
 </ul>
-</div>
-
-<br>
-
 <hr>
 
+<h1 id="little-header">Now my favorite TV Shows!</h1>
+<p>Horray. You know so much about me now. Congrats.</p>
+<or id="my-list-2">
+    <li id="num1">Parks & Rec</li>
+    <li id="num2">Letterkenny</li>
+    <li id="num3">Bridgerton</li>
+</or>
 <br>
+<hr>
 
-<div class="container">
-    <h3 id="little-header">This is a header in a div</h3>
-    <p>This is text to fill up space inside a header.</p>
-    <or id="mylist-2">
-        <li id="num1">Item number one</li>
-        <li id="num2">Item number two</li>
-        <li id="num3">Item number three</li>
-    </or>
-    <br>
+<div class="codeup">
+    <h1 id="last-header">AND NOW MY FAVORITE SCHOOL!!</h1>
+    <p>Who could it be?</p>
+
+    <ul id="code-up">
+        <li class="codeup">Codeup?</li>
+        <li class="codeup">Codeup.</li>
+        <li class="codeup">Codeup!</li>
+    </ul>
 </div>
+
+</ul>
+
+
 
 
 
@@ -44,49 +51,31 @@
         crossorigin="anonymous"></script>
 
 <script>
-    "use strict";
+    $(document).ready(function () {
+        //alert("Dom is loaded!")
 
-   /* $(".container-fluid").css({
-        "border-color": "purple",
-        "border-weight": "5px",
-        "border-style": 'solid'
-    });*/
+        $(".mainHeader").hover(function () {
+            $(this).css("background-color", "purple");
+        });
 
-    /*$(".mainHeader").css({color: 'green'});*/
+        $("#little-header").hover(function () {
+            $(this).css("background-color", "orange");
+        });
 
-    $("p").css({'color': 'orange', 'text-size': '18px'});
+        $("#last-header").hover(function () {
+            $(this).css("background-color", "green");
+        });
 
+        console.log($('div').first().next().removeClass('codeup'));
+        $('.codeup').css('border', 'solid red 1px');
 
-    $('#mylist').hover(function()
-    {color: 'red'});
+        $('h1, p, li').css({'background-color': 'lightblue', 'border': 'dashed red 1px'});
 
-
-    /*$(".container").css({
-        "border-color": "blue",
-        "border-weight": "5px",
-        "border-style": 'dashed'
-    });*/
-
-    /*$('#mylist-2').css({color: 'pink'});*/
-
-   /* $("p").hover(function(){
-        $(this).css("background-color", "yellow");
-    }, function(){
-        $(this).css("background-color", "pink");
-    });*/
-
-   /* let littleHeader = $('little-header').html();
-    alert(littleHeader);
-    console.log(littleHeader);*/
+        $("p").css({'color': 'red', 'text-size': '18px'});
 
 
-    $(".mainHeader").hover(function(){
-        $(this).css("background-color", "purple");
-    }, function(){
-        $(this).toggleClass("clicked");
+
     });
-
-
 </script>
 
 </body>
